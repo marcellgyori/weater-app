@@ -13,6 +13,7 @@ some useful videos.
 
 If you prefer video:
 
+- [Pluralsight Angular Skill Path: The Big Picture and Getting Started](https://app.pluralsight.com/paths/skills/angular)
 - [Java Brains - Angular 6 basics](https://www.youtube.com/watch?v=9RG3MiEBEIw&list=PLqq-6Pq4lTTb7JGBTogaJ8bm7f8VCvFkj)
 - [Angular Tutorial for Beginners: Learn Angular from Scratch | Mosh](https://www.youtube.com/watch?v=k5E2AVpwsko)
 
