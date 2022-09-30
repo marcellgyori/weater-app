@@ -1,0 +1,153 @@
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use "@angular/material" as mat;
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat.core();
+
+$md-primary-light-green: (
+  50: #eefdf4,
+  100: #d4fae4,
+  200: #b8f7d2,
+  300: #9cf4c0,
+  400: #86f1b3,
+  500: #71efa5,
+  600: #69ed9d,
+  700: #5eeb93,
+  800: #54e88a,
+  900: #42e479,
+  A100: #ffffff,
+  A200: #ffffff,
+  A400: #cfffdf,
+  A700: #b6ffcd,
+  contrast: (
+    50: #000000,
+    100: #000000,
+    200: #000000,
+    300: #000000,
+    400: #000000,
+    500: #000000,
+    600: #000000,
+    700: #000000,
+    800: #000000,
+    900: #000000,
+    A100: #000000,
+    A200: #000000,
+    A400: #000000,
+    A700: #000000,
+  ),
+);
+
+$md-accent-dark-green: (
+  50: #e3e6e4,
+  100: #b8c1bc,
+  200: #89988f,
+  300: #596e62,
+  400: #364f41,
+  500: #12301f,
+  600: #102b1b,
+  700: #0d2417,
+  800: #0a1e12,
+  900: #05130a,
+  A100: #55ff7d,
+  A200: #22ff56,
+  A400: #00ee38,
+  A700: #00d532,
+  contrast: (
+    50: #000000,
+    100: #000000,
+    200: #000000,
+    300: #ffffff,
+    400: #ffffff,
+    500: #ffffff,
+    600: #ffffff,
+    700: #ffffff,
+    800: #ffffff,
+    900: #ffffff,
+    A100: #000000,
+    A200: #000000,
+    A400: #000000,
+    A700: #000000,
+  ),
+);
+
+$md-warn-red: (
+  50: #feebeb,
+  100: #fccccc,
+  200: #faaaaa,
+  300: #f78888,
+  400: #f66f6f,
+  500: #f45555,
+  600: #f34e4e,
+  700: #f14444,
+  800: #ef3b3b,
+  900: #ec2a2a,
+  A100: #ffffff,
+  A200: #fff7f7,
+  A400: #ffc4c4,
+  A700: #ffabab,
+  contrast: (
+    50: #000000,
+    100: #000000,
+    200: #000000,
+    300: #000000,
+    400: #000000,
+    500: #000000,
+    600: #ffffff,
+    700: #ffffff,
+    800: #ffffff,
+    900: #ffffff,
+    A100: #000000,
+    A200: #000000,
+    A400: #000000,
+    A700: #000000,
+  ),
+);
+
+$weather-app-light-primary: mat.define-palette($md-primary-light-green);
+$weather-app-light-accent: mat.define-palette($md-accent-dark-green);
+$weather-app-light-warn: mat.define-palette($md-warn-red);
+
+$weather-app-light-theme: mat.define-light-theme(
+  (
+    color: (
+      primary: $weather-app-light-primary,
+      accent: $weather-app-light-accent,
+      warn: $weather-app-light-warn,
+    ),
+  )
+);
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include mat.all-component-themes($weather-app-light-theme);
+
+$weather-app-dark-primary: mat.define-palette($md-accent-dark-green);
+$weather-app-dark-accent: mat.define-palette($md-primary-light-green);
+$weather-app-dark-warn: mat.define-palette($md-warn-red);
+
+$weather-app-dark-theme: mat.define-dark-theme(
+  (
+    color: (
+      primary: $weather-app-dark-primary,
+      accent: $weather-app-dark-accent,
+      warn: $weather-app-dark-warn,
+    ),
+  )
+);
+.dark-theme-mode {
+  @include mat.all-component-themes($weather-app-dark-theme);
+}
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
