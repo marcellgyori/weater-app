@@ -1,5 +1,15 @@
 <div class="main-container">
-  <h4>Weather App</h4>
-  <card-list></card-list>
+  <div class="form-and-app">
+    <div
+      style="display: flex; flex-direction: row; cursor: pointer"
+      [routerLink]="['/']"
+    >
+      <img
+        src="../assets/clipart2372176.png"
+        style="margin: auto; height: 60px"
+      />
+      <h1>Weather App</h1>
+    </div>
+    <router-outlet></router-outlet>
+  </div>
 </div>
-<router-outlet></router-outlet>

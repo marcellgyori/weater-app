@@ -1,0 +1,33 @@
+<ngx-spinner
+  *ngIf="!isLoaded"
+  bdColor="rgba(255, 255, 255, 0.8)"
+  [fullScreen]="false"
+  type="triangle-skew-spin"
+  template="<img src='../../assets/editor-0.7s-47px.gif'>"
+  [name]="city"
+>
+</ngx-spinner>
+
+<div class="flex-container" *ngIf="isLoaded">
+  <div>
+    <h2 style="margin-left: 1.5rem; margin-bottom: 0.1rem">
+      {{ weather.city }}
+    </h2>
+    <p style="margin-left: 1.5rem; margin-top: 0.1rem">
+      {{ weather.state }}
+    </p>
+  </div>
+  <div class="flex-container align-to-end">
+    <div>
+      <h1 style="margin-right: 1.5rem">{{ weather.temperature }}°C</h1>
+    </div>
+    <div>
+      <img mat-card-md-image [src]="iconSrc" />
+    </div>
+  </div>
+</div>
+<div class="flex-container" *ngIf="isCantLoad">
+  <h2 style="margin-left: 1.5rem; margin-bottom: 0.1rem">
+    City {{ city }} does not exists
+  </h2>
+</div>
